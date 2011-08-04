@@ -1,5 +1,6 @@
+#-*- coding: utf-8 -*-
 {
-    "name" : "HelloOpen",
+    "name" : "Hello OpenERP",
     "version" : "0.1",
     "author" : "Fábio Cerqueira",
     "category" : "Hello World",
