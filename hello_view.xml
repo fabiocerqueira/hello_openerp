@@ -5,7 +5,7 @@
         <record model="ir.ui.view" id="hello_form_view">
             <field name="name">ho.hello.form</field>
             <field name="model">ho.hello</field>
-            <field name="type">form</fiel>
+            <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Hello">
                     <field name="text"/>
@@ -27,7 +27,10 @@
                 Hello
                  `- Register a new hello
         -->
-        <menuitem id="hello_menu" name="hello" />
+        <menuitem id="menu_hello_root" icon="hello_root" name="Hello OpenERP" sequence="20"
+            web_icon="images/hello.png"
+            web_icon_hover="images/hello-hover.png"/>
+        <menuitem id="hello_menu" name="hello" parent="menu_hello_root"/>
         <menuitem id="hello_menu_create" action="hello_action_create" parent="hello_menu"/>
     </data>
 </openerp>
