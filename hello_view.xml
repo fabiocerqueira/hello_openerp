@@ -14,6 +14,19 @@
         </record>
        <!-- end hello form view -->
 
+       <!-- hello list view -->
+        <record id="hello_list_view" model="ir.ui.view">
+            <field name="name">ho.hello.list.view</field>
+            <field name="model">ho.hello</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="text"/>
+                </tree>
+            </field>
+        </record>
+       <!-- hello list view -->
+
         <!-- Action craete hello -->
         <record id="hello_action_create" model="ir.actions.act_window">
             <field name="name">Register a new hello</field>
@@ -21,16 +34,27 @@
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
         </record>
+        <record id="hello_action_list" model="ir.actions.act_window">
+            <field name="name">List all hellos</field>
+            <field name="res_model">ho.hello</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+
 
         <!--
             The menu has the following Hierarchy :
+            Hello OpenERP
+               `-
                 Hello
                  `- Register a new hello
         -->
-        <menuitem id="menu_hello_root" icon="hello_root" name="Hello OpenERP" sequence="20"
+        <menuitem id="menu_hello_root" name="Hello OpenERP" sequence="20"
             web_icon="images/hello.png"
             web_icon_hover="images/hello-hover.png"/>
         <menuitem id="hello_menu" name="hello" parent="menu_hello_root"/>
         <menuitem id="hello_menu_create" action="hello_action_create" parent="hello_menu"/>
+        <menuitem id="hello_menu_list" action="hello_action_list" parent="hello_menu"/>
     </data>
 </openerp>
