@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- hello form view -->
+        <record model="ir.ui.view" id="hello_form_view">
+            <field name="name">ho.hello.form</field>
+            <field name="model">ho.hello</field>
+            <field name="type">form</fiel>
+            <field name="arch" type="xml">
+                <form string="Hello">
+                    <field name="text"/>
+                </form>
+            </field>
+        </record>
+       <!-- end hello form view -->
+
+        <!-- Action craete hello -->
+        <record id="hello_action_create" model="ir.actions.act_window">
+            <field name="name">Register a new hello</field>
+            <field name="res_model">ho.hello</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <!--
+            The menu has the following Hierarchy :
+                Hello
+                 `- Register a new hello
+        -->
+        <menuitem id="hello_menu" name="hello" />
+        <menuitem id="hello_menu_create" action="hello_action_create" parent="hello_menu"/>
+    </data>
+</openerp>
